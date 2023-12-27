@@ -10,11 +10,14 @@ hydra-colorlog==1.2.0
 hydra-optuna-sweeper==1.2.0
 
 # --------- loggers --------- #
-# wandb
+wandb
 # neptune-client
 # mlflow
 # comet-ml
 # aim>=3.16.2  # no lower than 3.16.2, see https://github.com/aimhubio/aim/issues/2550
+
+# --------- data analysis --------- #
+seaborn
 
 # --------- others --------- #
 rootutils       # standardizing the project root setup
@@ -22,3 +25,12 @@ pre-commit      # hooks for applying linters on commit
 rich            # beautiful text formatting in terminal
 pytest          # tests
 # sh            # for running bash commands in some tests (linux/macos only)
+pandas
+scikit-learn
+openpyxl
+regex
+nltk
+langdetect
+transformers
+torch-summary
+scipy

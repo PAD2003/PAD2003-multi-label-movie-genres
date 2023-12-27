@@ -1,0 +1,31 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: movie_genre_v1
+  - override /model: movie_genre
+  - override /callbacks: default
+  - override /trainer: default
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["movie_genre", "vgg19"]
+
+seed: 1012
+
+trainer:
+  min_epochs: 1
+  max_epochs: 30
+  gradient_clip_val: 0.5
+
+data:
+  batch_size: 64
+  num_workers: 32
+
+logger:
+  wandb:
+    name: "experiment-2-vgg19-datav2"
+    tags: ${tags}

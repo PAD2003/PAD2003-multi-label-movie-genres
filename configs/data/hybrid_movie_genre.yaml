@@ -1,0 +1,28 @@
+_target_: src.data.hybrid_movie_genre_datamodule.HybridMovieGenreDataModule
+
+train_set:
+  _target_: src.data.components.hybrid_movie_genre_dataset.HybridMovieGenreDataset
+  set: train
+  data_file: data/ml1m/content/dataset/movies_train.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres.txt
+
+val_set:
+  _target_: src.data.components.hybrid_movie_genre_dataset.HybridMovieGenreDataset
+  set: val
+  data_file: data/ml1m/content/dataset/movies_train.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres.txt
+
+test_set:
+  _target_: src.data.components.hybrid_movie_genre_dataset.HybridMovieGenreDataset
+  set: test
+  data_file: data/ml1m/content/dataset/movies_test.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres.txt
+
+batch_size: 1
+
+num_workers: 1
+
+pin_memory: False

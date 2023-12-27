@@ -1,0 +1,28 @@
+_target_: src.data.movie_genre_datamodule.MovieGenreDataModule
+
+train_set:
+  _target_: src.data.components.movie_genre_dataset.MovieGenreDataset
+  set: train
+  data_file: data/ml1m/content/dataset/movies_train.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres_clean.txt
+
+val_set:
+  _target_: src.data.components.movie_genre_dataset.MovieGenreDataset
+  set: val
+  data_file: data/ml1m/content/dataset/movies_train.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres_clean.txt
+
+test_set:
+  _target_: src.data.components.movie_genre_dataset.MovieGenreDataset
+  set: test
+  data_file: data/ml1m/content/dataset/movies_test.dat
+  folder_img_path: data/ml1m/content/dataset/ml1m-images
+  genre_file: data/ml1m/content/dataset/genres_clean.txt
+
+batch_size: 64
+
+num_workers: 32
+
+pin_memory: False

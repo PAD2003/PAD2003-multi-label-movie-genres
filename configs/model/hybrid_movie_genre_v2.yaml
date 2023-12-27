@@ -1,0 +1,33 @@
+_target_: src.models.hybrid_movie_genre_module_v2.HybridMovieGenreModuleV2
+
+net:
+  _target_: src.models.components.hybrid_model_v2.HybridModelV2
+  text_embedding:
+    _target_: src.models.components.hybrid_model_v2.TextEmbedding
+  image_embedding:
+    _target_: src.models.components.hybrid_model_v2.ImageEmbedding
+  user_rating_embedding:
+    _target_: src.models.components.hybrid_model_v2.UserRatingEmbedding
+  num_classes: 18
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+# scheduler:
+#   _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+#   _partial_: true
+#   mode: min
+#   factor: 0.1
+#   patience: 3
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.OneCycleLR
+  _partial_: True
+  max_lr: 0.001
+  steps_per_epoch: 230
+  epochs: 10
+
+compile: false

@@ -1,0 +1,1 @@
+python -m src.data.hybrid_movie_genre_datamodule

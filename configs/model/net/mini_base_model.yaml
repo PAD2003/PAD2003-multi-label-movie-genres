@@ -1,0 +1,4 @@
+_target_: src.models.components.base_model.MiniBaseModel
+
+image_size: [224, 224]
+num_classes: 18
