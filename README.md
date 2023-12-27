@@ -39,9 +39,3 @@ python src/train.py experiment=<experiment_name>.yaml
 ## How to validation
 
 Look into validation.ipynb. You only need to adjust config and then run cells.
-
-You can override any parameter from command line like this
-
-```bash
-python src/train.py trainer.max_epochs=20 data.batch_size=64
-```
